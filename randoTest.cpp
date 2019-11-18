@@ -32,57 +32,32 @@ TEST(RandoTest, sanityCheck)
 
 TEST(RandoTest, mostPopularZero)
 {
-    Rando rando;
-    ASSERT_EQ( rando.mostPopularDigit(0), 0 );
+  Rando rando;
+  ASSERT_EQ(rando.mostPopularDigit(0), 0);
 }
-
-TEST(RandoTest, mostPopularTieThree)
+TEST(RandoTest, mostPopularTwoWayTie)
 {
-    Rando rando;
-    ASSERT_EQ( rando.mostPopularDigit(331311), -1 );
+  Rando rando;
+  ASSERT_EQ(rando.mostPopularDigit(331311), -1);
 }
-
-TEST(RandoTest, mostPopularAllDigitsOnce)
+TEST(RandoTest, mostPopularTenWayTie)
 {
-    Rando rando;
-    ASSERT_EQ( rando.mostPopularDigit(1234567890), -1 );
+  Rando rando;
+  ASSERT_EQ(rando.mostPopularDigit(1234567890), -1);
 }
-
-TEST(RandoTest, mostPopularOneThreeTimes)
+TEST(RandoTest, mostPopularNotTie)
 {
-    Rando rando;
-    ASSERT_EQ( rando.mostPopularDigit(31311), 1 );
+  Rando rando;
+  ASSERT_EQ(rando.mostPopularDigit(31311), 1);
 }
-
 TEST(RandoTest, mostPopularAllTwos)
 {
-    Rando rando;
-    ASSERT_EQ( rando.mostPopularDigit(222), 2 );
+  Rando rando;
+  ASSERT_EQ(rando.mostPopularDigit(222), 2);
 }
-
-TEST(RandoTest, mostPopularCharacter)
+TEST(RandoTest, mostPopularOneTie)
 {
-    Rando rando;
-    ASSERT_EQ( rando.mostPopularDigit('A'), -1 );
+  Rando rando;
+  ASSERT_EQ(rando.mostPopularDigit(64), -1);
 }
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

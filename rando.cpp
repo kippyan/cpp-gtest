@@ -8,8 +8,7 @@
 **/
 bool Rando::isDivisibleBy(int first, int second)
 {
-
-	return true;
+  return (first % second) ? false : true;
 }
 
 /**
@@ -29,23 +28,22 @@ bool Rando::isPalindrome(std::string eval)
 **/
 unsigned int Rando::mostPopularDigit(unsigned int num)
 {
-    int most;
-    int popular;
-
-    popular = num%10;
-
-    return popular;
+  std::string istr = (std::string) num;
+  int[] digits = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+  for(int i = (int)num.size(); i > 0; i--){
+    digits[stoi(num[i])]++;
+  }
+  int mostcount = -1;
+  int mostindex = -1;
+  for(int i = 0; i < 10; i++){
+    if(digits[i] > most){
+      mostcount = digits[i];
+      mostindex = i;
+    }
+  }
+  for(int i = 0; i < 10; i++){
+    if(digits[i] == mostcount && mostindex != i)
+      return -1;
+  }
+  return mostindex;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
